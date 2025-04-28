@@ -1,0 +1,59 @@
+counter.js
+----------
+import React, { useState } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div style={styles.container}>
+      <h2 style={styles.heading}>Count: {count}</h2>
+      <div style={styles.buttonContainer}>
+        <button style={styles.button} onClick={() => setCount(count + 1)}>
+          Increment
+        </button>
+        <button style={styles.button} onClick={() => setCount(count - 1)}>
+          Decrement
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    margin: '50px auto',
+    padding: '30px',
+    maxWidth: '300px',
+    textAlign: 'center',
+    backgroundColor: '#fff',
+    borderRadius: '10px',
+    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', // box shadow effect
+  },
+  heading: {
+    marginBottom: '20px',
+    color: '#333',
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  button: {
+    padding: '10px 15px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#4CAF50',
+    color: '#fff',
+    cursor: 'pointer',
+    margin: '0 5px',
+    transition: 'background-color 0.3s',
+  },
+};
+
+
+styles.button[':hover'] = {
+  backgroundColor: '#45a049',
+};
+
+export default Counter;
